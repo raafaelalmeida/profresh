@@ -1,0 +1,132 @@
+/* ======== General Header Styling ======== */
+.header {
+  width: 100%;
+  background: #004d99;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: relative;
+}
+
+/* Container to keep content centered */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+/* ======== Logo Styling ======== */
+.logo a {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ======== Desktop Navigation (Always Visible) ======== */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.nav a:hover {
+  color: #ff9800;
+}
+
+/* ======== Hamburger Menu (Hidden on Desktop) ======== */
+.menuIcon {
+  display: none; /* Ensures it doesn't show on larger screens */
+}
+
+/* ======== Mobile Navigation with Effects ======== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Show Hamburger Menu Only on Mobile */
+  .menuIcon {
+    display: block;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Animate Hamburger Icon Rotation */
+  .menuIcon.open {
+    transform: rotate(180deg);
+  }
+
+  /* Hide desktop menu on mobile */
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #004d99;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: none;
+  }
+
+  .nav.showMenu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav li {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav a {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    transition: color 0.3s ease, background 0.3s ease-in-out;
+  }
+
+  /* Smooth Background Hover Effect */
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

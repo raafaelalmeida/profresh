@@ -1,0 +1,80 @@
+.container {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o formulário */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Define um limite para o formulário */
+}
+
+.input, .textarea {
+  margin: 10px 0;
+  padding: 12px;
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #004d99;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Ajuste do textarea para altura fixa */
+.textarea {
+  height: 120px;
+  resize: none; /* Impede redimensionamento */
+}
+
+/* Estilizando o botão */
+.button {
+  padding: 12px 24px;
+  background-color: #004d99;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #00264d;
+  transform: scale(1.05);
+}
+
+/* 📌 Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .input, .textarea {
+    max-width: 100%;
+  }
+}
+
+.feedback {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.feedback.success {
+  color: green;
+}
+
+.feedback.error {
+  color: red;
+}
+

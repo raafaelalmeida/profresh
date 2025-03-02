@@ -1,0 +1,27 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* 📌 Reduzindo os tamanhos das fontes em telas pequenas */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 22px;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  }
+  
+  :root {
+    --primary-color: #004d99; /* Deep blue (from the logo) */
+    --secondary-color: #f5f2e6; /* Creamy beige background */
+    --accent-color: #ff9800; /* Light orange for CTA */
+    --text-color: #2c2c2c; /* Dark grey for readability */
+  }
+  
+
