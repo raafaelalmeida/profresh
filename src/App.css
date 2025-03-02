@@ -14,3 +14,10 @@ html, body {
   padding: 0;
   max-width: 100%;
 }
+
+.loading {
+  text-align: center;
+  font-size: 22px;
+  padding: 50px;
+  color: #004d99;
+}
