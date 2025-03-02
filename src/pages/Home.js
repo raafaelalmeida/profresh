@@ -1,5 +1,6 @@
 import { FaLeaf, FaShieldAlt, FaStar } from "react-icons/fa"; // Importing icons
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
         <div className={styles.overlay}></div>
         <h1 className={styles.bannerText}>Professional Carpet Cleaning Services</h1>
         <p className={styles.bannerSubText}>We make your carpets fresh and clean with eco-friendly products.</p>
-        <a href="/contact" className={styles.ctaButton}>Get a Free Quote</a>
+        <Link to="/contact" className="button">Get a Free Quote</Link>
       </div>
 
       {/* Why Choose Us Section */}
