@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Function to force refresh on direct access
+if (window.location.pathname !== "/" && !window.location.hash) {
+  window.location.replace("/#/"); // Redirects to prevent blank screen
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
