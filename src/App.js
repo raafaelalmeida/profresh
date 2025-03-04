@@ -5,6 +5,8 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PromoBanner from "./components/PromoBanner";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,6 +17,16 @@ function App() {
 
   return (
     <Router>
+  <PromoBanner />
+  <Header />
+  <div className="page-content">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  </div>
+  <Footer />
       <Header />
       {loading ? (
         <div className="loading">Loading...</div>
