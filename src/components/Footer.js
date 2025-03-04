@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 import { Link } from "react-router-dom";
-import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaSms } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -18,13 +18,13 @@ function Footer() {
           <Link to="/contact" className={styles.ctaButton}>Get a Free Quote</Link>
         </div>
 
-        {/* Social & Contact */}
+        {/* Social & Contact Links - Side by Side */}
         <div className={styles.social}>
           <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
             <FaFacebook className={styles.icon} /> Facebook
           </a>
           <a href="sms:+61406963152">
-            <FaPhoneAlt className={styles.icon} /> Send SMS
+            <FaSms className={styles.icon} /> Send SMS
           </a>
         </div>
       </div>
