@@ -45,3 +45,30 @@
     width: 90%;
   }
 }
+
+.pricingSection {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pricingTable {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.pricingTable th, .pricingTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.pricingTable th {
+  background: #004d99;
+  color: white;
+}
+
+.pricingTable tr:nth-child(even) {
+  background: #f9f9f9;
+}
