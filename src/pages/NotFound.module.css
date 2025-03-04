@@ -1,0 +1,19 @@
+.notFound {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .homeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .homeButton:hover {
+    background: #e68900;
+  }
+  

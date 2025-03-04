@@ -13,6 +13,7 @@ html, body {
   margin: 0;
   padding: 0;
   max-width: 100%;
+<<<<<<< HEAD
 }
 
 .loading {
@@ -21,3 +22,6 @@ html, body {
   padding: 50px;
   color: #004d99;
 }
+=======
+}
+>>>>>>> 3cd993517ddade67474a46483edaaaf9d7e8e75e
