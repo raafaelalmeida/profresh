@@ -6,21 +6,22 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PromoBanner from "./components/PromoBanner";
+import Loading from "./components/Loading"; // Import the new loading animation
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000); // Simulating a 1-second load
+    setTimeout(() => setLoading(false), 1500); // Simulating a 1.5-second load
   }, []);
 
   return (
     <Router>
-      <PromoBanner /> {/* ✅ Promo banner at the top */}
-      <Header />  {/* ✅ Only one header */}
-      
+      <PromoBanner />
+      <Header />
+
       {loading ? (
-        <div className="loading">Loading...</div>
+        <Loading /> /* 🔹 Show animated loading spinner */
       ) : (
         <div className="page-content">
           <Routes>
@@ -31,7 +32,7 @@ function App() {
         </div>
       )}
 
-      <Footer /> {/* ✅ Only one footer */}
+      <Footer />
     </Router>
   );
 }
