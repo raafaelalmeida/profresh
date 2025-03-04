@@ -50,7 +50,7 @@ function Services() {
             </tr>
             <tr>
               <td>Upholstery Cleaning</td>
-              <td>From $89</td>
+              <td>From $79</td>
             </tr>
             <tr>
               <td>Mattresses</td>
