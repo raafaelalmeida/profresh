@@ -1,6 +1,6 @@
-import { FaLeaf, FaShieldAlt, FaStar } from "react-icons/fa"; // Importing icons
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
+import { FaBroom, FaCouch, FaSprayCan, FaShieldAlt } from "react-icons/fa";
 
 function Home() {
   return (
@@ -9,8 +9,12 @@ function Home() {
       <div className={styles.banner}>
         <div className={styles.overlay}></div>
         <h1 className={styles.bannerText}>Professional Carpet Cleaning Services</h1>
-        <p className={styles.bannerSubText}>We make your carpets fresh and clean with eco-friendly products.</p>
-        <Link to="/contact" className="button">Get a Free Quote</Link>
+        <p className={styles.bannerSubText}>We bring freshness and hygiene to your carpets with eco-friendly solutions.</p>
+        
+        {/* ✅ Fixed CTA Button */}
+        <Link to="/contact" className={styles.ctaButton}>
+          Get a Free Quote
+        </Link>
       </div>
 
       {/* Why Choose Us Section */}
@@ -18,19 +22,24 @@ function Home() {
         <h2>Why Choose Profresh Carpet Cleaning?</h2>
         <div className={styles.whyGrid}>
           <div className={styles.feature}>
-            <FaLeaf className={styles.icon} />
-            <h3>Eco-Friendly Products</h3>
-            <p>We use 100% safe, non-toxic cleaning solutions for your family and pets.</p>
+            <FaBroom className={styles.icon} />
+            <h3>Deep Carpet Cleaning</h3>
+            <p>We use high-quality cleaning techniques to remove dirt, bacteria, and allergens.</p>
+          </div>
+          <div className={styles.feature}>
+            <FaCouch className={styles.icon} />
+            <h3>Upholstery Cleaning</h3>
+            <p>Our services refresh and sanitize sofas, chairs, and mattresses.</p>
+          </div>
+          <div className={styles.feature}>
+            <FaSprayCan className={styles.icon} />
+            <h3>Stain & Odor Removal</h3>
+            <p>We eliminate stubborn stains and unpleasant odors, leaving your carpets fresh.</p>
           </div>
           <div className={styles.feature}>
             <FaShieldAlt className={styles.icon} />
-            <h3>Trusted Professionals</h3>
-            <p>Our highly trained technicians ensure deep cleaning with guaranteed results.</p>
-          </div>
-          <div className={styles.feature}>
-            <FaStar className={styles.icon} />
-            <h3>5-Star Service</h3>
-            <p>Rated highly by customers for outstanding quality and professionalism.</p>
+            <h3>Protective Treatment</h3>
+            <p>Keep your carpets cleaner for longer with our specialized protective treatment.</p>
           </div>
         </div>
       </div>
