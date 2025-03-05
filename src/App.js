@@ -1,12 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";  // 🔹 Import Vercel Analytics
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PromoBanner from "./components/PromoBanner";
-import Loading from "./components/Loading"; // Import the new loading animation
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ function App() {
       <Header />
 
       {loading ? (
-        <Loading /> /* 🔹 Show animated loading spinner */
+        <div className="loading">Loading...</div>
       ) : (
         <div className="page-content">
           <Routes>
@@ -33,6 +33,7 @@ function App() {
       )}
 
       <Footer />
+      <Analytics /> {/* 🔹 Vercel Analytics will track user behavior */}
     </Router>
   );
 }
