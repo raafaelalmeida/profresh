@@ -20,7 +20,7 @@ function Footer() {
 
         {/* Social & Contact Links - Side by Side */}
         <div className={styles.social}>
-          <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61572791712252" target="_blank" rel="noopener noreferrer">
             <FaFacebook className={styles.icon} /> Facebook
           </a>
           <a href="sms:+61406963152">
