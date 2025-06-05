@@ -10,6 +10,7 @@ function Footer() {
         <div className={styles.links}>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
+          <Link to="/results">Results</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
