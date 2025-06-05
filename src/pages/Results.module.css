@@ -1,0 +1,61 @@
+.pageWrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.imageBlock {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.image {
+  width: 45%;
+  max-width: 300px;
+  margin: 0 1%;
+  border-radius: 8px;
+  border: 2px solid #eee;
+}
+
+.caption {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .image {
+    width: 100%;
+    max-width: none;
+    margin: 0.5rem 0;
+  }
+
+  .imageBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

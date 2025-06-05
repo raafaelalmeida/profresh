@@ -23,6 +23,7 @@ function Header() {
           <ul>
             <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+            <li><Link to="/results" onClick={() => setMenuOpen(false)}>Results</Link></li>   
             <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>
         </nav>

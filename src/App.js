@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";  // 🔹 Import Vercel Analytics
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Results from "./pages/Results";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PromoBanner from "./components/PromoBanner";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/results" element={<Results />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
