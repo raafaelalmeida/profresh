@@ -15,9 +15,12 @@ function Footer() {
         </div>
 
         {/* CTA Button */}
-        <div className={styles.cta}>
-          <Link to="/contact" className={styles.ctaButton}>Get a Free Quote</Link>
-        </div>
+          <a
+  href="sms:+61431361230?body=Hi%2C%20I%27m%20interested%20in%20a%20carpet%20cleaning%20quote."
+  className={styles.ctaButton}
+>
+  Get a Free Quote
+</a>
 
         {/* Social & Contact Links - Side by Side */}
         <div className={styles.social}>
