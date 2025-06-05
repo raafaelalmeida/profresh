@@ -28,9 +28,10 @@ function Home() {
     <p className={styles.bannerSubText}>
       We bring freshness and hygiene to your carpets with eco-friendly solutions.
     </p>
-    <Link to="/contact" className={styles.ctaButton}>
-      Get a Free Quote
-    </Link>
+    <a href="sms:+61431361230" className={styles.ctaButton}>
+  Get a Free Quote
+</a>
+
       </div>
     </div>
 
