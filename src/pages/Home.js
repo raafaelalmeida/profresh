@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
-import { Link } from "react-router-dom";
 import { FaBroom, FaCouch, FaSprayCan, FaShieldAlt } from "react-icons/fa";
 
 function Home() {
@@ -28,7 +27,10 @@ function Home() {
     <p className={styles.bannerSubText}>
       We bring freshness and hygiene to your carpets with eco-friendly solutions.
     </p>
-    <a href="sms:+61431361230" className={styles.ctaButton}>
+    <a
+  href="sms:+61431361230?body=Hi%2C%20I%27m%20interested%20in%20a%20carpet%20cleaning%20quote."
+  className={styles.ctaButton}
+>
   Get a Free Quote
 </a>
 
