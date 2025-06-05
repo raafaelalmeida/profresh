@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PromoBanner from "./components/PromoBanner";
+import Loading from "./components/Loading";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       <Header />
 
       {loading ? (
-        <div className="loading">Loading...</div>
+        <Loading />
       ) : (
         <div className="page-content">
           <Routes>
@@ -36,9 +37,8 @@ function App() {
       )}
 
       <Footer />
-      <Analytics /> {/* 🔹 Vercel Analytics will track user behavior */}
+      <Analytics />
     </Router>
   );
 }
-
 export default App;
