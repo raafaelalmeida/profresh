@@ -29,7 +29,7 @@ function Results() {
           <div className={styles.imageBlock} key={n}>
             <img src={`/images/before${n}.jpeg`} alt={`Before ${n}`} className={styles.image} />
             <img src={`/images/after${n}.jpeg`} alt={`After ${n}`} className={styles.image} />
-            <p className={styles.caption}>Client {n} – "Amazing difference!"</p>
+            {/* <p className={styles.caption}>Client {n} – "Amazing difference!"</p> */}
           </div>
         ))}
       </div>
