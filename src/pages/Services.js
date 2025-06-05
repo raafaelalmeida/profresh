@@ -45,12 +45,12 @@ function Services() {
           </thead>
           <tbody>
             <tr>
-              <td>Carpet Deep Cleaning</td>
-              <td>From $89</td>
+              <td>Carpet Steam Cleaning</td>
+              <td>From $89 (Up To 2 Rooms)</td>
             </tr>
             <tr>
               <td>Upholstery Cleaning</td>
-              <td>From $79</td>
+              <td>From $89 (Up To 3 Seats)</td>
             </tr>
             <tr>
               <td>Mattresses</td>
