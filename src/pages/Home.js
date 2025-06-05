@@ -20,14 +20,19 @@ function Home() {
   return (
     <div className={styles.pageWrapper}>
       {/* Banner Section */}
-      <div className={styles.banner}>
-        <div className={styles.overlay}></div>
-        <h1 className={styles.bannerText}>Professional Carpet Cleaning Services</h1>
-        <p className={styles.bannerSubText}>We bring freshness and hygiene to your carpets with eco-friendly solutions.</p>
-        <Link to="/contact" className={styles.ctaButton}>
-          Get a Free Quote
-        </Link>
+     <div className={styles.banner}>
+  <div className={styles.overlay}></div>
+
+  <div className={styles.bannerContent}>
+    <h1 className={styles.bannerText}>Professional Carpet Cleaning Services</h1>
+    <p className={styles.bannerSubText}>
+      We bring freshness and hygiene to your carpets with eco-friendly solutions.
+    </p>
+    <Link to="/contact" className={styles.ctaButton}>
+      Get a Free Quote
+    </Link>
       </div>
+    </div>
 
       {/* Why Choose Us Section */}
       <div className={styles.whyChoose}>
