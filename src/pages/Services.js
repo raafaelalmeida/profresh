@@ -10,13 +10,13 @@ function Services() {
       <div className={styles.serviceList}>
         <div className={styles.serviceItem}>
           <FaBroom className={styles.icon} />
-          <h3>Carpet Deep Cleaning</h3>
+          <h3>Carpet Deep Steam Cleaning</h3>
           <p>Eliminate dirt, allergens, and bacteria for a healthier home.</p>
         </div>
 
         <div className={styles.serviceItem}>
           <FaCouch className={styles.icon} />
-          <h3>Upholstery Cleaning</h3>
+          <h3>Upholstery Steam Cleaning</h3>
           <p>Refresh and sanitize sofas, chairs, and mattresses for a fresh look.</p>
         </div>
 

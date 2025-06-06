@@ -43,12 +43,12 @@ function Home() {
         <div className={styles.whyGrid}>
           <div className={styles.feature}>
             <FaBroom className={styles.icon} />
-            <h3>Deep Carpet Cleaning</h3>
+            <h3>Carpet Steam Cleaning</h3>
             <p>We use high-quality cleaning techniques to remove dirt, bacteria, and allergens.</p>
           </div>
           <div className={styles.feature}>
             <FaCouch className={styles.icon} />
-            <h3>Upholstery Cleaning</h3>
+            <h3>Upholstery Steam Cleaning</h3>
             <p>Our services refresh and sanitize sofas, chairs, and mattresses.</p>
           </div>
           <div className={styles.feature}>
