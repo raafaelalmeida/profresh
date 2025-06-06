@@ -2,71 +2,58 @@ import { useState } from 'react';
 import styles from './Contact.module.css';
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '' });
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    request: ''
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSMSRedirect = () => {
+    const { name, request } = formData;
 
-    if (!formData.name || !formData.phone) {
-      setMessage('⚠️ Please enter both name and phone.');
+    if (!name || !request) {
+      alert('Please fill in both fields.');
       return;
     }
 
-    setLoading(true);
-    try {
-      const res = await fetch('/api/send-sms', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+    // Cria o corpo do SMS com encode para caracteres especiais
+    const smsBody = encodeURIComponent(`Hi, my name is ${name} and I'm looking for: ${request}`);
+    
+    // Número de destino
+    const phoneNumber = '+61431361230'; // Substitua pelo seu número
 
-      if (res.ok) {
-        setMessage('✅ Thanks! We will contact you shortly.');
-        setFormData({ name: '', phone: '' });
-      } else {
-        setMessage('❌ Something went wrong. Please try again.');
-      }
-    } catch {
-      setMessage('❌ Network error. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+    // Redireciona para o app de SMS
+    window.location.href = `sms:${phoneNumber}?body=${smsBody}`;
   };
 
   return (
     <div className={styles.container}>
-      <h2>Contact Us</h2>
-      <p>Just leave your name and phone. We'll text you shortly.</p>
+      <h2>Quick Contact</h2>
+      <p>Send us a quick message and we’ll get back to you.</p>
 
-      {message && <p className={styles.feedback}>{message}</p>}
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        className={styles.input}
+      />
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Your Phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        <button className={styles.button} type="submit" disabled={loading}>
-          {loading ? 'Sending...' : 'Send'}
-        </button>
-      </form>
+      <textarea
+        name="request"
+        placeholder="What do you need? (e.g. carpet/couch cleaning, mattress cleaning quote)"
+        value={formData.request}
+        onChange={handleChange}
+        className={styles.textarea}
+      />
+
+      <button onClick={handleSMSRedirect} className={styles.button}>
+        Get a Quote
+      </button>
     </div>
   );
 }
