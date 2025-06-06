@@ -1,121 +1,67 @@
 import { useState } from 'react';
 import styles from './Contact.module.css';
-import emailjs from 'emailjs-com';
 
 function Contact() {
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '', // ✅ Added phone number field
-    message: ''
-  });
-
-  // State for success/error messages
+  const [formData, setFormData] = useState({ name: '', phone: '' });
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Handle input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Form submission
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent page reload
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      setMessage('⚠️ Please fill in all fields.');
-      return;
-    }
-
-    // Phone number validation
-    const phoneRegex = /^[0-9\s+()-]{7,15}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      setMessage('⚠️ Please enter a valid phone number.');
+    if (!formData.name || !formData.phone) {
+      setMessage('⚠️ Please enter both name and phone.');
       return;
     }
 
     setLoading(true);
+    try {
+      const res = await fetch('/api/send-sms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-    // Simulated submission (replace with EmailJS API call)
-    setTimeout(() => {
-      setMessage('✅ Message sent successfully! We will contact you soon.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      if (res.ok) {
+        setMessage('✅ Thanks! We will contact you shortly.');
+        setFormData({ name: '', phone: '' });
+      } else {
+        setMessage('❌ Something went wrong. Please try again.');
+      }
+    } catch {
+      setMessage('❌ Network error. Please try again.');
+    } finally {
       setLoading(false);
-    }, 2000);
-
-    
-    // Uncomment below to integrate with EmailJS
-    emailjs.send(
-      'service_orbuyyn',  // Replace with your EmailJS Service ID
-      'template_qzrmd4a', // Replace with your EmailJS Template ID
-      {
-        to_email: 'your-email@example.com',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone, // ✅ Include phone number
-        message: formData.message
-      },
-      'mJuVDNvoRGZz76gOS' // Replace with your EmailJS User ID
-    )
-    .then(() => {
-      setMessage('✅ Message sent successfully! We will contact you soon.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    })
-    .catch(() => {
-      setMessage('❌ Error sending message. Please try again.');
-    })
-    .finally(() => setLoading(false));
-  
+    }
   };
 
   return (
     <div className={styles.container}>
       <h2>Contact Us</h2>
-      <p>Fill in the form below, and we'll get back to you as soon as possible.</p>
+      <p>Just leave your name and phone. We'll text you shortly.</p>
 
-      {message && (
-        <p className={`${styles.feedback} ${message.includes('success') ? styles.success : styles.error}`}>
-          {message}
-        </p>
-      )}
+      {message && <p className={styles.feedback}>{message}</p>}
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          placeholder="Name"
-          className={styles.input}
+          placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
           className={styles.input}
-          value={formData.email}
-          onChange={handleChange}
         />
         <input
           type="tel"
           name="phone"
-          placeholder="Mobile Number"
-          className={styles.input}
+          placeholder="Your Phone"
           value={formData.phone}
           onChange={handleChange}
-        />
-        <textarea
-          name="message"
-          placeholder="What service you need?
-Best Date?
-Best Time?"
-          className={styles.textarea}
-          value={formData.message}
-          onChange={handleChange}
+          className={styles.input}
         />
         <button className={styles.button} type="submit" disabled={loading}>
           {loading ? 'Sending...' : 'Send'}
